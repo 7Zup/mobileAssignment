@@ -1,15 +1,15 @@
 //
-//  mobileAssignmentTests.swift
+//  ProfileTests.swift
 //  mobileAssignmentTests
 //
-//  Created by Fabrice Froehly on 24/12/2017.
+//  Created by Fabrice Froehly on 26/12/2017.
 //  Copyright © 2017 Fabrice Froehly. All rights reserved.
 //
 
 import XCTest
-@testable import mobileAssignment
 
-class mobileAssignmentTests: XCTestCase {
+/// Test the profile modification
+class ProfileTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
@@ -21,16 +21,8 @@ class mobileAssignmentTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
+    func testProfileModification() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-    
 }

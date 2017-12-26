@@ -15,10 +15,14 @@
 		E77FE9701FF0258000EE85F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E77FE96E1FF0258000EE85F1 /* Main.storyboard */; };
 		E77FE9721FF0258000EE85F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E77FE9711FF0258000EE85F1 /* Assets.xcassets */; };
 		E77FE9751FF0258000EE85F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E77FE9731FF0258000EE85F1 /* LaunchScreen.storyboard */; };
-		E77FE9801FF0258000EE85F1 /* mobileAssignmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77FE97F1FF0258000EE85F1 /* mobileAssignmentTests.swift */; };
 		E77FE98B1FF0258000EE85F1 /* mobileAssignmentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77FE98A1FF0258000EE85F1 /* mobileAssignmentUITests.swift */; };
 		E77FE99F1FF2DDC300EE85F1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77FE99E1FF2DDC300EE85F1 /* User.swift */; };
 		E77FE9A11FF2DDCA00EE85F1 /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77FE9A01FF2DDCA00EE85F1 /* Channel.swift */; };
+		E77FE9A51FF2EB3200EE85F1 /* LoginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77FE9A41FF2EB3200EE85F1 /* LoginTests.swift */; };
+		E77FE9B91FF2EC3100EE85F1 /* SendMessageInChannelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77FE9B81FF2EC3100EE85F1 /* SendMessageInChannelTests.swift */; };
+		E77FE9BB1FF2EC4200EE85F1 /* OneToOneChatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77FE9BA1FF2EC4200EE85F1 /* OneToOneChatTests.swift */; };
+		E77FE9BD1FF2EC9000EE85F1 /* ProfileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77FE9BC1FF2EC9000EE85F1 /* ProfileTests.swift */; };
+		E7D0656E1FF2EE9A008734FF /* CreatePublicChannelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D0656D1FF2EE9A008734FF /* CreatePublicChannelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,13 +60,17 @@
 		E77FE9741FF0258000EE85F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E77FE9761FF0258000EE85F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E77FE97B1FF0258000EE85F1 /* mobileAssignmentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mobileAssignmentTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E77FE97F1FF0258000EE85F1 /* mobileAssignmentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mobileAssignmentTests.swift; sourceTree = "<group>"; };
 		E77FE9811FF0258000EE85F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E77FE9861FF0258000EE85F1 /* mobileAssignmentUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mobileAssignmentUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E77FE98A1FF0258000EE85F1 /* mobileAssignmentUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mobileAssignmentUITests.swift; sourceTree = "<group>"; };
 		E77FE98C1FF0258000EE85F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E77FE99E1FF2DDC300EE85F1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E77FE9A01FF2DDCA00EE85F1 /* Channel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
+		E77FE9A41FF2EB3200EE85F1 /* LoginTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTests.swift; sourceTree = "<group>"; };
+		E77FE9B81FF2EC3100EE85F1 /* SendMessageInChannelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMessageInChannelTests.swift; sourceTree = "<group>"; };
+		E77FE9BA1FF2EC4200EE85F1 /* OneToOneChatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneToOneChatTests.swift; sourceTree = "<group>"; };
+		E77FE9BC1FF2EC9000EE85F1 /* ProfileTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTests.swift; sourceTree = "<group>"; };
+		E7D0656D1FF2EE9A008734FF /* CreatePublicChannelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePublicChannelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,7 +166,11 @@
 		E77FE97E1FF0258000EE85F1 /* mobileAssignmentTests */ = {
 			isa = PBXGroup;
 			children = (
-				E77FE97F1FF0258000EE85F1 /* mobileAssignmentTests.swift */,
+				E7D0656D1FF2EE9A008734FF /* CreatePublicChannelTests.swift */,
+				E77FE9A41FF2EB3200EE85F1 /* LoginTests.swift */,
+				E77FE9BC1FF2EC9000EE85F1 /* ProfileTests.swift */,
+				E77FE9B81FF2EC3100EE85F1 /* SendMessageInChannelTests.swift */,
+				E77FE9BA1FF2EC4200EE85F1 /* OneToOneChatTests.swift */,
 				E77FE9811FF0258000EE85F1 /* Info.plist */,
 			);
 			path = mobileAssignmentTests;
@@ -519,7 +531,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E77FE9801FF0258000EE85F1 /* mobileAssignmentTests.swift in Sources */,
+				E77FE9B91FF2EC3100EE85F1 /* SendMessageInChannelTests.swift in Sources */,
+				E77FE9BB1FF2EC4200EE85F1 /* OneToOneChatTests.swift in Sources */,
+				E77FE9BD1FF2EC9000EE85F1 /* ProfileTests.swift in Sources */,
+				E77FE9A51FF2EB3200EE85F1 /* LoginTests.swift in Sources */,
+				E7D0656E1FF2EE9A008734FF /* CreatePublicChannelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
