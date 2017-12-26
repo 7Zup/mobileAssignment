@@ -17,6 +17,8 @@
 		E77FE9751FF0258000EE85F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E77FE9731FF0258000EE85F1 /* LaunchScreen.storyboard */; };
 		E77FE9801FF0258000EE85F1 /* mobileAssignmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77FE97F1FF0258000EE85F1 /* mobileAssignmentTests.swift */; };
 		E77FE98B1FF0258000EE85F1 /* mobileAssignmentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77FE98A1FF0258000EE85F1 /* mobileAssignmentUITests.swift */; };
+		E77FE99F1FF2DDC300EE85F1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77FE99E1FF2DDC300EE85F1 /* User.swift */; };
+		E77FE9A11FF2DDCA00EE85F1 /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77FE9A01FF2DDCA00EE85F1 /* Channel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,8 @@
 		E77FE9861FF0258000EE85F1 /* mobileAssignmentUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mobileAssignmentUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E77FE98A1FF0258000EE85F1 /* mobileAssignmentUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mobileAssignmentUITests.swift; sourceTree = "<group>"; };
 		E77FE98C1FF0258000EE85F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E77FE99E1FF2DDC300EE85F1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E77FE9A01FF2DDCA00EE85F1 /* Channel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +141,10 @@
 		E77FE9691FF0258000EE85F1 /* mobileAssignment */ = {
 			isa = PBXGroup;
 			children = (
+				E77FE99D1FF2DAE100EE85F1 /* APIController */,
+				E77FE99C1FF2DAC400EE85F1 /* Controller */,
+				E77FE99B1FF2DABD00EE85F1 /* View */,
+				E77FE99A1FF2DAB500EE85F1 /* Model */,
 				E77FE96A1FF0258000EE85F1 /* AppDelegate.swift */,
 				E77FE96C1FF0258000EE85F1 /* ViewController.swift */,
 				E77FE96E1FF0258000EE85F1 /* Main.storyboard */,
@@ -163,6 +171,36 @@
 				E77FE98C1FF0258000EE85F1 /* Info.plist */,
 			);
 			path = mobileAssignmentUITests;
+			sourceTree = "<group>";
+		};
+		E77FE99A1FF2DAB500EE85F1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E77FE99E1FF2DDC300EE85F1 /* User.swift */,
+				E77FE9A01FF2DDCA00EE85F1 /* Channel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E77FE99B1FF2DABD00EE85F1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E77FE99C1FF2DAC400EE85F1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E77FE99D1FF2DAE100EE85F1 /* APIController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = APIController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,9 +348,24 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-mobileAssignment/Pods-mobileAssignment-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -456,7 +509,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E77FE96D1FF0258000EE85F1 /* ViewController.swift in Sources */,
+				E77FE9A11FF2DDCA00EE85F1 /* Channel.swift in Sources */,
 				E77FE96B1FF0258000EE85F1 /* AppDelegate.swift in Sources */,
+				E77FE99F1FF2DDC300EE85F1 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
