@@ -14,6 +14,7 @@ import UIKit
 /// Test the basic functions of the user
 class UserTests: XCTestCase {
     
+    // Variables
     var nickname: String = "Fabylou"
     var profile_url: String = "https://picsum.photos/50/50/?image=5"
     var user: User?

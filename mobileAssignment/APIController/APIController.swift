@@ -114,4 +114,44 @@ class APIController {
             self.request(requestType: .put, route: "/users/\(userId)", params: params, completionHandler: completionHandler)
         }
     }
+    
+    
+    
+    
+    
+    /*****************************************************************************/
+    // MARK: - Channel
+    
+    // Creates a channel
+    func openChannel<T: Mappable>(channelName: String, completionHandler: @escaping (_ user: T?) -> Void) {
+        
+        var params = [String: AnyObject]()
+        params["name"] = channelName as AnyObject
+        
+        self.request(requestType: .post, route: "/open_channels", params: params, completionHandler: completionHandler)
+    }
+    
+    // Get channel
+    func getChannel<T: Mappable>(channel_url: String, completionHandler: @escaping (_ user: T?) -> Void) {
+        
+        self.request(requestType: .get, route: "/open_channels/\(channel_url)", completionHandler: completionHandler)
+    }
+    
+    // Delete channel
+    func deleteChannel<T: Mappable>(channel_url: String, completionHandler: @escaping (_ user: T?) -> Void) {
+        
+        self.request(requestType: .delete, route: "/open_channels/\(channel_url)", completionHandler: completionHandler)
+    }
+    
+    // List channels
+    func listChannel<T: Mappable>(completionHandler: @escaping (_ user: [T]?) -> Void) {
+        
+        self.requestArray(requestType: .get, route: "/open_channels", completionHandler: completionHandler)
+    }
+    
+    // List channel participants
+    func listUsersInChannel<T: Mappable>(channel_url: String, completionHandler: @escaping (_ user: [T]?) -> Void) {
+        
+        self.requestArray(requestType: .get, route: "/open_channels/\(channel_url)/participants", completionHandler: completionHandler)
+    }
 }
