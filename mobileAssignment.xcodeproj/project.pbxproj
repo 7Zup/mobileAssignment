@@ -10,6 +10,8 @@
 		4244A07725079C5A04E9C8FA /* Pods_mobileAssignmentTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 967C4B117629A797ADE5F143 /* Pods_mobileAssignmentTests.framework */; };
 		7A40CA1D890B80789BC95A0F /* Pods_mobileAssignmentUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EEB86DE962D7B08AC16126C /* Pods_mobileAssignmentUITests.framework */; };
 		C6FAA8421536B2091903C7AB /* Pods_mobileAssignment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B18903FBEF520770161FA9C /* Pods_mobileAssignment.framework */; };
+		E72426A11FF2F37F002E1F24 /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72426A01FF2F37F002E1F24 /* APIController.swift */; };
+		E72426A51FF302AC002E1F24 /* LoginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77FE9A41FF2EB3200EE85F1 /* LoginTests.swift */; };
 		E77FE96B1FF0258000EE85F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77FE96A1FF0258000EE85F1 /* AppDelegate.swift */; };
 		E77FE96D1FF0258000EE85F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77FE96C1FF0258000EE85F1 /* ViewController.swift */; };
 		E77FE9701FF0258000EE85F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E77FE96E1FF0258000EE85F1 /* Main.storyboard */; };
@@ -18,7 +20,6 @@
 		E77FE98B1FF0258000EE85F1 /* mobileAssignmentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77FE98A1FF0258000EE85F1 /* mobileAssignmentUITests.swift */; };
 		E77FE99F1FF2DDC300EE85F1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77FE99E1FF2DDC300EE85F1 /* User.swift */; };
 		E77FE9A11FF2DDCA00EE85F1 /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77FE9A01FF2DDCA00EE85F1 /* Channel.swift */; };
-		E77FE9A51FF2EB3200EE85F1 /* LoginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77FE9A41FF2EB3200EE85F1 /* LoginTests.swift */; };
 		E77FE9B91FF2EC3100EE85F1 /* SendMessageInChannelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77FE9B81FF2EC3100EE85F1 /* SendMessageInChannelTests.swift */; };
 		E77FE9BB1FF2EC4200EE85F1 /* OneToOneChatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77FE9BA1FF2EC4200EE85F1 /* OneToOneChatTests.swift */; };
 		E77FE9BD1FF2EC9000EE85F1 /* ProfileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77FE9BC1FF2EC9000EE85F1 /* ProfileTests.swift */; };
@@ -52,6 +53,7 @@
 		967C4B117629A797ADE5F143 /* Pods_mobileAssignmentTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mobileAssignmentTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9C86768F130E1A8E9BEACD2 /* Pods-mobileAssignmentTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mobileAssignmentTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-mobileAssignmentTests/Pods-mobileAssignmentTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D3514FD280148EBB35B4640F /* Pods-mobileAssignmentUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mobileAssignmentUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-mobileAssignmentUITests/Pods-mobileAssignmentUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		E72426A01FF2F37F002E1F24 /* APIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIController.swift; sourceTree = "<group>"; };
 		E77FE9671FF0258000EE85F1 /* mobileAssignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mobileAssignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E77FE96A1FF0258000EE85F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E77FE96C1FF0258000EE85F1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 		E77FE99D1FF2DAE100EE85F1 /* APIController */ = {
 			isa = PBXGroup;
 			children = (
+				E72426A01FF2F37F002E1F24 /* APIController.swift */,
 			);
 			path = APIController;
 			sourceTree = "<group>";
@@ -365,8 +368,8 @@
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
-				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
-				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${PODS_ROOT}/SendBirdSDK/SendBirdSDK.framework",
+				"${PODS_ROOT}/SendBirdSDK/SendBirdSDK.framework.dSYM",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -375,8 +378,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SendBirdSDK.framework",
+				"${DWARF_DSYM_FOLDER_PATH}/SendBirdSDK.framework.dSYM",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -524,6 +527,7 @@
 				E77FE9A11FF2DDCA00EE85F1 /* Channel.swift in Sources */,
 				E77FE96B1FF0258000EE85F1 /* AppDelegate.swift in Sources */,
 				E77FE99F1FF2DDC300EE85F1 /* User.swift in Sources */,
+				E72426A11FF2F37F002E1F24 /* APIController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -534,7 +538,7 @@
 				E77FE9B91FF2EC3100EE85F1 /* SendMessageInChannelTests.swift in Sources */,
 				E77FE9BB1FF2EC4200EE85F1 /* OneToOneChatTests.swift in Sources */,
 				E77FE9BD1FF2EC9000EE85F1 /* ProfileTests.swift in Sources */,
-				E77FE9A51FF2EB3200EE85F1 /* LoginTests.swift in Sources */,
+				E72426A51FF302AC002E1F24 /* LoginTests.swift in Sources */,
 				E7D0656E1FF2EE9A008734FF /* CreatePublicChannelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

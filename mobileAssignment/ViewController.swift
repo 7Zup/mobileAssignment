@@ -10,16 +10,42 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    var nickname: String = "Fabylou"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        APIController.shared.getUser(nickname: self.nickname, completionHandler: getUserCompletionHandler)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    /// Completion called when the get user had succeeded
+    ///
+    /// - Parameter user: The user returned
+    func getUserCompletionHandler(user: User?) {
+        
+        if let user = user {
+            
+            print("SUCCESS: user nickname is: \(user.nickname ?? "Nickname not found")")
+        } else {
+            
+            print("FAILURE: Couldn't get user")
+            APIController.shared.createUser(nickname: self.nickname, completionHandler: createUserCompletionHandler)
+        }
     }
-
-
+    
+    /// Completion called when the get user had succeeded
+    ///
+    /// - Parameter user: The user returned
+    func createUserCompletionHandler(user: User?) {
+        
+        if let user = user {
+            
+            print("SUCCESS: user nickname is: \(user.nickname ?? "Nickname not found")")
+        } else {
+            
+            print("FAILURE: Couldn't create user")
+        }
+    }
 }
 
