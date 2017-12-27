@@ -46,7 +46,7 @@ class BurgerMenuVC: UIViewController {
 extension BurgerMenuVC: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 3
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -54,10 +54,13 @@ extension BurgerMenuVC: UITableViewDelegate, UITableViewDataSource {
         if section == 0 {
             
             return 1
-        } else {
+        } else if section == 1 {
             
             // return self.channels.count
             return 3
+        } else {
+            
+            return 1
         }
     }
     
@@ -71,11 +74,17 @@ extension BurgerMenuVC: UITableViewDelegate, UITableViewDataSource {
             cell.channelShortNameLabel.isHidden = true
             cell.separatorSection.isHidden = false
             cell.isSelectedCircleImage.isHidden = true
-        } else {
+        } else if indexPath.section == 1 {
             
             cell.avatarChannelImage.image = UIImage(named: "circle-empty-picture")
             cell.channelShortNameLabel.isHidden = false
             cell.channelShortNameLabel.text = String(indexPath.row)
+            cell.separatorSection.isHidden = true
+            cell.isSelectedCircleImage.isHidden = true
+        } else {
+            
+            cell.avatarChannelImage.image = UIImage(named: "add-picture")
+            cell.channelShortNameLabel.isHidden = true
             cell.separatorSection.isHidden = true
             cell.isSelectedCircleImage.isHidden = true
         }
@@ -91,8 +100,23 @@ extension BurgerMenuVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        self.selectedCell = indexPath
-        self.tableView.reloadData()
+        // Set highlight row
+        if indexPath.section != 2 {
+            
+            self.selectedCell = indexPath
+            self.tableView.reloadData()
+        }
+        
+        if indexPath.section == 0 {
+            
+            // Private channel
+        } else if indexPath.section == 1 {
+            
+            // Groupe channel
+        } else {
+            
+            // Create channel
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
