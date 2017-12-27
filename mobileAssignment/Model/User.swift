@@ -9,7 +9,7 @@
 import UIKit
 import ObjectMapper
 
-class User: Mappable {
+class User: NSObject, NSCopying, Mappable {
     
     var user_id: String?
     var nickname: String?
@@ -21,6 +21,13 @@ class User: Mappable {
     required init?(map: Map) {
     }
     
+    init(user_id: String?, nickname: String?, profile_url: String?) {
+        
+        self.nickname = nickname
+        self.user_id = user_id
+        self.profile_url = profile_url
+    }
+    
     func mapping(map: Map) {
         
         user_id         <- map["user_id"]
@@ -29,6 +36,12 @@ class User: Mappable {
         access_token    <- map["access_token"]
         is_online       <- map["is_online"]
         last_seen_at    <- map["last_seen_at"]
+    }
+    
+    func copy(with zone: NSZone? = nil) -> Any {
+        
+        let copy = User(user_id: user_id, nickname: nickname, profile_url: profile_url)
+        return copy
     }
 }
 

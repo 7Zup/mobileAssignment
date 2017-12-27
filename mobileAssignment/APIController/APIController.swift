@@ -47,7 +47,7 @@ class APIController {
         Alamofire.request("\(apiURL)\(route)", method: requestType, parameters: params, encoding: JSONEncoding.default, headers: header)
             .validate(statusCode: 200..<300)
             .responseObject(keyPath: keyPath) { (response: DataResponse<T>) in
-                
+
                 completionHandler(response.result.value)
         }
     }
@@ -72,7 +72,7 @@ class APIController {
     
     
     /*****************************************************************************/
-    // MARK: - Authentication
+    // MARK: - User
     
     // Create a user using a nickname
     func createUser<T: Mappable>(nickname: String, completionHandler: @escaping (_ user: T?) -> Void) {
@@ -83,21 +83,35 @@ class APIController {
         params["user_id"] = nickname + "_id" as AnyObject
         params["profile_url"] = NSNull() as AnyObject
         
-        print("Request: Create User")
+        print("Request: Create User \(nickname)")
         self.request(requestType: .post, route: "/users", params: params, completionHandler: completionHandler)
     }
     
     // Get a user using its nickname
     func getUser<T: Mappable>(nickname: String, completionHandler: @escaping (_ user: T?) -> Void) {
         
-        print("Request: Get User")
+        print("Request: Get User \(nickname)")
         self.request(requestType: .get, route: "/users/\(nickname)_id", completionHandler: completionHandler)
     }
     
     // Delete a user using its nickname
     func deleteUser<T: Mappable>(nickname: String, completionHandler: @escaping (_ user: T?) -> Void) {
         
-        print("Request: Get User")
+        print("Request: Get User \(nickname)")
         self.request(requestType: .delete, route: "/users/\(nickname)_id", completionHandler: completionHandler)
+    }
+
+    // Modifies the user
+    func putUser<T: Mappable>(user: User, completionHandler: @escaping (_ user: T?) -> Void) {
+        
+        if let userId = user.user_id {
+            
+            print("Request: Modify user: \(user.nickname ?? "Unamed")")
+            var params = [String: AnyObject]()
+            params["nickname"] = user.nickname as AnyObject
+            params["profile_url"] = user.profile_url as AnyObject
+            
+            self.request(requestType: .put, route: "/users/\(userId)", params: params, completionHandler: completionHandler)
+        }
     }
 }

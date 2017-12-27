@@ -11,7 +11,7 @@
 		7A40CA1D890B80789BC95A0F /* Pods_mobileAssignmentUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EEB86DE962D7B08AC16126C /* Pods_mobileAssignmentUITests.framework */; };
 		C6FAA8421536B2091903C7AB /* Pods_mobileAssignment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B18903FBEF520770161FA9C /* Pods_mobileAssignment.framework */; };
 		E72426A11FF2F37F002E1F24 /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72426A01FF2F37F002E1F24 /* APIController.swift */; };
-		E72426A51FF302AC002E1F24 /* LoginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77FE9A41FF2EB3200EE85F1 /* LoginTests.swift */; };
+		E72426A51FF302AC002E1F24 /* UserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77FE9A41FF2EB3200EE85F1 /* UserTests.swift */; };
 		E732046C1FF3BF39005056E8 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E732046B1FF3BF39005056E8 /* LoginVC.swift */; };
 		E740E00C1FF3CA18005D6F25 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E740E00B1FF3CA18005D6F25 /* Colors.swift */; };
 		E740E00F1FF3CD5D005D6F25 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E740E00E1FF3CD5D005D6F25 /* HomeVC.swift */; };
@@ -25,7 +25,6 @@
 		E77FE9A11FF2DDCA00EE85F1 /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77FE9A01FF2DDCA00EE85F1 /* Channel.swift */; };
 		E77FE9B91FF2EC3100EE85F1 /* SendMessageInChannelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77FE9B81FF2EC3100EE85F1 /* SendMessageInChannelTests.swift */; };
 		E77FE9BB1FF2EC4200EE85F1 /* OneToOneChatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77FE9BA1FF2EC4200EE85F1 /* OneToOneChatTests.swift */; };
-		E77FE9BD1FF2EC9000EE85F1 /* ProfileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77FE9BC1FF2EC9000EE85F1 /* ProfileTests.swift */; };
 		E7D0656E1FF2EE9A008734FF /* CreatePublicChannelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D0656D1FF2EE9A008734FF /* CreatePublicChannelTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -74,10 +73,9 @@
 		E77FE98C1FF0258000EE85F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E77FE99E1FF2DDC300EE85F1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E77FE9A01FF2DDCA00EE85F1 /* Channel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
-		E77FE9A41FF2EB3200EE85F1 /* LoginTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTests.swift; sourceTree = "<group>"; };
+		E77FE9A41FF2EB3200EE85F1 /* UserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTests.swift; sourceTree = "<group>"; };
 		E77FE9B81FF2EC3100EE85F1 /* SendMessageInChannelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMessageInChannelTests.swift; sourceTree = "<group>"; };
 		E77FE9BA1FF2EC4200EE85F1 /* OneToOneChatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneToOneChatTests.swift; sourceTree = "<group>"; };
-		E77FE9BC1FF2EC9000EE85F1 /* ProfileTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTests.swift; sourceTree = "<group>"; };
 		E7D0656D1FF2EE9A008734FF /* CreatePublicChannelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePublicChannelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -199,8 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				E7D0656D1FF2EE9A008734FF /* CreatePublicChannelTests.swift */,
-				E77FE9A41FF2EB3200EE85F1 /* LoginTests.swift */,
-				E77FE9BC1FF2EC9000EE85F1 /* ProfileTests.swift */,
+				E77FE9A41FF2EB3200EE85F1 /* UserTests.swift */,
 				E77FE9B81FF2EC3100EE85F1 /* SendMessageInChannelTests.swift */,
 				E77FE9BA1FF2EC4200EE85F1 /* OneToOneChatTests.swift */,
 				E77FE9811FF0258000EE85F1 /* Info.plist */,
@@ -573,8 +570,7 @@
 			files = (
 				E77FE9B91FF2EC3100EE85F1 /* SendMessageInChannelTests.swift in Sources */,
 				E77FE9BB1FF2EC4200EE85F1 /* OneToOneChatTests.swift in Sources */,
-				E77FE9BD1FF2EC9000EE85F1 /* ProfileTests.swift in Sources */,
-				E72426A51FF302AC002E1F24 /* LoginTests.swift in Sources */,
+				E72426A51FF302AC002E1F24 /* UserTests.swift in Sources */,
 				E7D0656E1FF2EE9A008734FF /* CreatePublicChannelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

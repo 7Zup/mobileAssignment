@@ -11,10 +11,11 @@ import Foundation
 import UIKit
 @testable import mobileAssignment
 
-/// Test the basic login/logout functions of the application
-class LoginTests: XCTestCase {
+/// Test the basic functions of the user
+class UserTests: XCTestCase {
     
     var nickname: String = "Fabylou"
+    var profile_url: String = "https://picsum.photos/50/50/?image=5"
     var user: User?
     
     // Timer
@@ -40,12 +41,13 @@ class LoginTests: XCTestCase {
     // MARK: - Login functions
     
     /// Test login/create
-    func testLogin() {
+    func test_a_Login() {
         
+        // get/create user
         APIController.shared.getUser(nickname: self.nickname, completionHandler: getUserCompletionHandler)
         
         // Wait for asynchronous functions to finish
-        waitForExpectations(timeout: 5, handler: nil)
+        waitForExpectations(timeout: 10, handler: nil)
         XCTAssertEqual(self.nickname, self.user?.nickname)
     }
     
@@ -57,7 +59,7 @@ class LoginTests: XCTestCase {
         if let user = user {
             
             self.user = user
-            self.exp.fulfill()
+            exp.fulfill()
         } else {
             
             APIController.shared.createUser(nickname: self.nickname, completionHandler: createUserCompletionHandler)
@@ -79,6 +81,48 @@ class LoginTests: XCTestCase {
         self.exp.fulfill()
     }
 
+    /// Test user profile modification
+    ///
+    /// - Parameter user: the user to update
+    func test_b_ProfileModification() {
+        
+        // Get the user for profile modification
+        APIController.shared.getUser(nickname: self.nickname, completionHandler: getUserCompletionHandler)
+        waitForExpectations(timeout: 10, handler: nil)
+        // When user is filled
+        
+        // Modification of a tmpUser to avoid modify the real user without doing the API call
+        let userTmp = self.user!.copy() as! User
+        userTmp.profile_url = self.profile_url
+        
+        // Reset expectation
+        self.exp = expectation(description: "\(#function)\(#line)")
+        
+        // API call to modify image
+        APIController.shared.putUser(user: userTmp, completionHandler: modifyUserCompletionHandler)
+        
+        waitForExpectations(timeout: 10, handler: nil)
+        XCTAssertEqual(self.profile_url, self.user?.profile_url)
+    }
+    
+    /// Completion called when the put user had succeeded
+    ///
+    /// - Parameter user: The user returned
+    func modifyUserCompletionHandler(user: User?) {
+        
+        if let user = user {
+            
+            self.user = user
+        } else {
+            
+            XCTFail("Failure: User is nil")
+        }
+        self.exp.fulfill()
+    }
+    
+    // Edit profile_url
+    // Delete user
+
     
     
     
@@ -88,12 +132,12 @@ class LoginTests: XCTestCase {
     // MARK: - Delete functions
     
     /// Test delete
-    func testDelete() {
+    func test_c_Delete() {
         
         APIController.shared.deleteUser(nickname: self.nickname, completionHandler: deleteUserCompletionHandler)
         
         // Wait after API call
-        waitForExpectations(timeout: 5, handler: nil)
+        waitForExpectations(timeout: 10, handler: nil)
     }
     
     /// Completion called when the get user had succeeded
