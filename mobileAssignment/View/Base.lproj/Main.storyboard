@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="BradleyHand-Bold.ttf">
+            <string>BradleyHandITCTT-Bold</string>
+        </array>
+        <array key="ChalkboardSE.ttc">
+            <string>ChalkboardSE-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--LoginVC-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="LoginVC" customModule="mobileAssignment" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="3I7-14-s34">
+                                <rect key="frame" x="109.5" y="232.5" width="156.5" height="50"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-picture" translatesAutoresizingMaskIntoConstraints="NO" id="tvP-zM-ZS6">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="GRv-R5-XaJ"/>
+                                            <constraint firstAttribute="width" constant="50" id="TXQ-ys-l0Q"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Slug" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RJD-yf-QKU">
+                                        <rect key="frame" x="60" y="0.0" width="96.5" height="50"/>
+                                        <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="42"/>
+                                        <color key="textColor" red="0.44646030660000002" green="0.53782290219999995" blue="0.8530752063" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="tvP-zM-ZS6" firstAttribute="centerY" secondItem="RJD-yf-QKU" secondAttribute="centerY" id="xhg-mZ-TJc"/>
+                                </constraints>
+                            </stackView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Pseudo" textAlignment="justified" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YJ8-C6-jrc">
+                                <rect key="frame" x="20" y="302.5" width="335" height="40"/>
+                                <color key="backgroundColor" red="0.17214614149999999" green="0.1840682924" blue="0.200710535" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="T6h-TA-B7q"/>
+                                </constraints>
+                                <color key="textColor" red="0.91615520335672351" green="0.92522604695431476" blue="0.92522604695431476" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="namePhonePad" keyboardAppearance="alert" returnKeyType="continue" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="nickname"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sIN-th-WXm">
+                                <rect key="frame" x="19.5" y="352.5" width="335" height="40"/>
+                                <color key="backgroundColor" red="0.44646030660000002" green="0.53782290219999995" blue="0.8530752063" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
+                                <state key="normal" title="LOGIN">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginButtonTUI:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gT6-Td-deO"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1367502511" green="0.15278571839999999" blue="0.1653084457" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="3I7-14-s34" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="1aA-0E-LMN"/>
+                            <constraint firstItem="YJ8-C6-jrc" firstAttribute="top" secondItem="3I7-14-s34" secondAttribute="bottom" constant="20" id="7uZ-Ky-mmP"/>
+                            <constraint firstItem="3I7-14-s34" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" multiplier="3:4" id="Hdx-vQ-gs1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YJ8-C6-jrc" secondAttribute="trailing" constant="20" id="TBE-8e-qsW"/>
+                            <constraint firstItem="sIN-th-WXm" firstAttribute="height" secondItem="YJ8-C6-jrc" secondAttribute="height" id="Yv1-MJ-wMU"/>
+                            <constraint firstItem="YJ8-C6-jrc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="eAe-t2-68n"/>
+                            <constraint firstItem="sIN-th-WXm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="19.5" id="jrO-Uu-hyH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sIN-th-WXm" secondAttribute="trailing" constant="20.5" id="mpG-ZT-6uK"/>
+                            <constraint firstItem="sIN-th-WXm" firstAttribute="top" secondItem="YJ8-C6-jrc" secondAttribute="bottom" constant="10" id="psp-yK-ypc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="nicknameTextField" destination="YJ8-C6-jrc" id="fB6-RM-UEm"/>
+                        <segue destination="NGb-mn-j9H" kind="show" identifier="segueHome" id="Ufd-gK-Zz4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--HomeVC-->
+        <scene sceneID="erK-Jo-kja">
+            <objects>
+                <viewController id="NGb-mn-j9H" customClass="HomeVC" customModule="mobileAssignment" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rFV-Dz-98b">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="5EH-JT-Zcl">
+                                <rect key="frame" x="73" y="232.5" width="230" height="50"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-picture" translatesAutoresizingMaskIntoConstraints="NO" id="PnY-Yt-wRU">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="Ifi-hz-kGV"/>
+                                            <constraint firstAttribute="height" constant="50" id="PLT-a2-bRZ"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Congrats" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pri-ke-Bx1">
+                                        <rect key="frame" x="60" y="0.0" width="170" height="50"/>
+                                        <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="42"/>
+                                        <color key="textColor" red="0.44646030660000002" green="0.53782290219999995" blue="0.8530752063" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="PnY-Yt-wRU" firstAttribute="centerY" secondItem="pri-ke-Bx1" secondAttribute="centerY" id="Fku-eQ-5I0"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1367502511" green="0.15278571839999999" blue="0.1653084457" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="5EH-JT-Zcl" firstAttribute="centerY" secondItem="npZ-ZH-b5l" secondAttribute="centerY" multiplier="3:4" id="AYj-pI-NIw"/>
+                            <constraint firstItem="5EH-JT-Zcl" firstAttribute="centerX" secondItem="npZ-ZH-b5l" secondAttribute="centerX" id="MBY-t8-RJc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="npZ-ZH-b5l"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hXw-l2-QOD" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="905" y="33"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="logo-picture" width="50" height="50"/>
+    </resources>
+</document>
