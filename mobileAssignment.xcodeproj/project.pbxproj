@@ -26,6 +26,8 @@
 		E77FE9B91FF2EC3100EE85F1 /* SendMessageInChannelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77FE9B81FF2EC3100EE85F1 /* SendMessageInChannelTests.swift */; };
 		E77FE9BB1FF2EC4200EE85F1 /* OneToOneChatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77FE9BA1FF2EC4200EE85F1 /* OneToOneChatTests.swift */; };
 		E7D0656E1FF2EE9A008734FF /* CreatePublicChannelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D0656D1FF2EE9A008734FF /* CreatePublicChannelTests.swift */; };
+		E7FCE95B1FF41937005FD8E1 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FCE95A1FF41937005FD8E1 /* ProfileVC.swift */; };
+		E7FCE95F1FF43795005FD8E1 /* BurgerMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FCE95E1FF43795005FD8E1 /* BurgerMenuVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +79,8 @@
 		E77FE9B81FF2EC3100EE85F1 /* SendMessageInChannelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMessageInChannelTests.swift; sourceTree = "<group>"; };
 		E77FE9BA1FF2EC4200EE85F1 /* OneToOneChatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneToOneChatTests.swift; sourceTree = "<group>"; };
 		E7D0656D1FF2EE9A008734FF /* CreatePublicChannelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePublicChannelTests.swift; sourceTree = "<group>"; };
+		E7FCE95A1FF41937005FD8E1 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		E7FCE95E1FF43795005FD8E1 /* BurgerMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BurgerMenuVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				E740E00E1FF3CD5D005D6F25 /* HomeVC.swift */,
+				E7FCE95E1FF43795005FD8E1 /* BurgerMenuVC.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -234,6 +239,7 @@
 		E77FE99C1FF2DAC400EE85F1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E7FCE9591FF41929005FD8E1 /* Profile */,
 				E740E00D1FF3CD52005D6F25 /* Home */,
 				E732046A1FF3BF2B005056E8 /* Login */,
 			);
@@ -246,6 +252,14 @@
 				E72426A01FF2F37F002E1F24 /* APIController.swift */,
 			);
 			path = APIController;
+			sourceTree = "<group>";
+		};
+		E7FCE9591FF41929005FD8E1 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				E7FCE95A1FF41937005FD8E1 /* ProfileVC.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -398,6 +412,7 @@
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/Presentr/Presentr.framework",
 				"${PODS_ROOT}/SendBirdSDK/SendBirdSDK.framework",
 				"${PODS_ROOT}/SendBirdSDK/SendBirdSDK.framework.dSYM",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
@@ -408,6 +423,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Presentr.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SendBirdSDK.framework",
 				"${DWARF_DSYM_FOLDER_PATH}/SendBirdSDK.framework.dSYM",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
@@ -556,10 +572,12 @@
 				E77FE9A11FF2DDCA00EE85F1 /* Channel.swift in Sources */,
 				E740E00F1FF3CD5D005D6F25 /* HomeVC.swift in Sources */,
 				E732046C1FF3BF39005056E8 /* LoginVC.swift in Sources */,
+				E7FCE95B1FF41937005FD8E1 /* ProfileVC.swift in Sources */,
 				E77FE96B1FF0258000EE85F1 /* AppDelegate.swift in Sources */,
 				E740E00C1FF3CA18005D6F25 /* Colors.swift in Sources */,
 				E77FE99F1FF2DDC300EE85F1 /* User.swift in Sources */,
 				E74794351FF3C82C00AAFE3B /* EXTextField.swift in Sources */,
+				E7FCE95F1FF43795005FD8E1 /* BurgerMenuVC.swift in Sources */,
 				E72426A11FF2F37F002E1F24 /* APIController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

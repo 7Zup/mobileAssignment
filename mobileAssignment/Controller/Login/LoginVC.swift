@@ -28,6 +28,11 @@ class LoginVC: UIViewController {
         self.initContent()
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        
+        return .lightContent
+    }
+    
     
     
     

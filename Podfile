@@ -10,6 +10,7 @@ target 'mobileAssignment' do
     pod 'Alamofire'
     pod 'AlamofireObjectMapper'
     pod 'AlamofireImage'
+    pod 'Presentr'
     
     # Pods for mobileAssignment
     

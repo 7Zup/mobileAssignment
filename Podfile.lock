@@ -6,6 +6,7 @@ PODS:
     - Alamofire (~> 4.1)
     - ObjectMapper (~> 3.0)
   - ObjectMapper (3.1.0)
+  - Presentr (1.3)
   - SendBirdSDK (3.0.79)
   - SwiftyJSON (4.0.0)
 
@@ -13,6 +14,7 @@ DEPENDENCIES:
   - Alamofire
   - AlamofireImage
   - AlamofireObjectMapper
+  - Presentr
   - SendBirdSDK
   - SwiftyJSON
 
@@ -21,9 +23,10 @@ SPEC CHECKSUMS:
   AlamofireImage: 2e784dc5d00f04903a52c1d169181469c805c3df
   AlamofireObjectMapper: 5fafc816351cbbc0d486611aaeba7461c0cbad49
   ObjectMapper: 20505058f54e5c3ca69e1d6de9897d152a5369a6
+  Presentr: 3f0825a42cb32ecd8fc6b6d0b0de87d7d0b42482
   SendBirdSDK: c705ec8ac49b6fe4dcb8ad5ca68f39ea0c27ba6b
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
-PODFILE CHECKSUM: ec81d4a544f30ef0a8e1b6d9e2a837505b7fbc31
+PODFILE CHECKSUM: 439336cc1aee85aacb6e302e4c09d347002a9c3a
 
 COCOAPODS: 1.3.1
