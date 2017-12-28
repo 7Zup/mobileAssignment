@@ -9,6 +9,19 @@
 import UIKit
 import ObjectMapper
 
+class ChannelList: Mappable {
+    
+    var channels: [Channel]?
+    
+    required init?(map: Map) {
+    }
+    
+    func mapping(map: Map) {
+        
+        channels         <- map["channels"]
+    }
+}
+
 class Channel: Mappable {
     
     var channel_url: String?

@@ -144,9 +144,9 @@ class APIController {
     }
     
     // List channels
-    func listChannel<T: Mappable>(completionHandler: @escaping (_ user: [T]?) -> Void) {
+    func listChannel<T: Mappable>(completionHandler: @escaping (_ user: T?) -> Void) {
         
-        self.requestArray(requestType: .get, route: "/open_channels", completionHandler: completionHandler)
+        self.request(requestType: .get, route: "/open_channels?limit=100", completionHandler: completionHandler)
     }
     
     // List channel participants

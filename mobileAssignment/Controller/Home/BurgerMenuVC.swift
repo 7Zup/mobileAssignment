@@ -8,6 +8,13 @@
 
 import Foundation
 import UIKit
+import SDWebImage
+
+protocol BurgerMenuDelegate {
+    
+    func changeViewController(segue: String)
+    func openChat(channel: Channel)
+}
 
 class BubbleCell: UITableViewCell {
     
@@ -17,15 +24,25 @@ class BubbleCell: UITableViewCell {
     @IBOutlet weak var separatorSection: UIView!
 }
 
+class UserCell: UITableViewCell {
+    
+    @IBOutlet weak var avatarImage: UIImageView!
+    @IBOutlet weak var connectedImage: UIImageView!
+    @IBOutlet weak var nicknameLabel: UILabel!
+}
+
 class BurgerMenuVC: UIViewController {
     
     // Outlets
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableViewChannel: UITableView!
+    @IBOutlet weak var tableViewUser: UITableView!
     
     // Variables
     var user: User!
-    var channels: [Channel] = []
+    var channels: ChannelList?
+    var currentChannel: Channel?
     var selectedCell: IndexPath = IndexPath(row: 0, section: 0)
+    var burgerMenuDelegate: BurgerMenuDelegate!
     
     
     
@@ -34,29 +51,80 @@ class BurgerMenuVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.tableFooterView = UIView()
+        tableViewChannel.tableFooterView = UIView()
+        tableViewUser.tableFooterView = UIView()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        APIController.shared.listChannel(completionHandler: getListChannelCompletionHandler)
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         
         return .lightContent
     }
+    
+    
+    
+    
+    
+    /*****************************************************************************/
+    // MARK: - IBAction
+    
+    @IBAction func OpenChannelTUI(_ sender: Any) {
+        
+        if let delegate = self.burgerMenuDelegate, let channel = self.currentChannel {
+            
+            self.dismiss(animated: true, completion: {
+                
+                delegate.openChat(channel: channel)
+            })
+        }
+    }
+    
+    
+    
+    
+    
+    
+    /*****************************************************************************/
+    // MARK: - Completion handler
+    
+    
+    /// Get all channel
+    ///
+    /// - Parameter channels: Channel list returned
+    func getListChannelCompletionHandler(channels: ChannelList?) {
+        
+        if let channels = channels {
+            
+            self.channels = channels
+            self.tableViewChannel.reloadData()
+        }
+    }
+    
+    /// Get current channel
+    ///
+    /// - Parameter channel: Channel returned
+    func getCurrentChannelCompletionHandler(channel: Channel?) {
+        
+        if channel != nil {
+            
+            self.currentChannel = channel
+            self.tableViewUser.reloadData()
+        }
+    }
 }
 
 extension BurgerMenuVC: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        if section == 0 {
+        // If tableview channel
+        if tableView == self.tableViewChannel {
             
-            return 1
-        } else if section == 1 {
-            
-            // return self.channels.count
             return 3
         } else {
             
@@ -64,58 +132,156 @@ extension BurgerMenuVC: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        let cell: BubbleCell = tableView.dequeueReusableCell(withIdentifier: "bubbleCell") as! BubbleCell
-        
-        if indexPath.section == 0 {
-            
-            cell.avatarChannelImage.image = UIImage(named: "people-picture")
-            cell.channelShortNameLabel.isHidden = true
-            cell.separatorSection.isHidden = false
-            cell.isSelectedCircleImage.isHidden = true
-        } else if indexPath.section == 1 {
-            
-            cell.avatarChannelImage.image = UIImage(named: "circle-empty-picture")
-            cell.channelShortNameLabel.isHidden = false
-            cell.channelShortNameLabel.text = String(indexPath.row)
-            cell.separatorSection.isHidden = true
-            cell.isSelectedCircleImage.isHidden = true
+        // If tableview channel
+        if tableView == self.tableViewChannel {
+            if section == 0 {
+                
+                return 1
+            } else if section == 1 {
+                
+                if self.channels?.channels != nil {
+                    
+                    return self.channels!.channels!.count
+                } else {
+                    
+                    return 0
+                }
+            } else {
+                
+                return 1
+            }
         } else {
             
-            cell.avatarChannelImage.image = UIImage(named: "add-picture")
-            cell.channelShortNameLabel.isHidden = true
-            cell.separatorSection.isHidden = true
-            cell.isSelectedCircleImage.isHidden = true
-        }
-        
-        // If cell is selected
-        if indexPath.section == self.selectedCell.section && indexPath.row == self.selectedCell.row {
+            // To modify later when adding private messages
             
-            cell.isSelectedCircleImage.isHidden = false
+            // If section selected of other tableview if an open channel, display info of open channel
+            if self.selectedCell.section == 1 {
+                
+                // refresh current channel by getting selected channel an fetching info of that channel
+                if let channel = self.channels?.channels?[selectedCell.row], channel.channel_url != nil {
+                    
+                    APIController.shared.getChannel(channel_url: channel.channel_url!, completionHandler: getCurrentChannelCompletionHandler)
+                }
+                
+                if self.currentChannel != nil && self.currentChannel?.participants != nil {
+                    
+                    return self.currentChannel!.participants!.count
+                } else {
+                    return 0
+                }
+            }
+            return 1
         }
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        return cell
+        // If tableview channel
+        if tableView == self.tableViewChannel {
+            
+            let cell: BubbleCell = tableView.dequeueReusableCell(withIdentifier: "bubbleCell") as! BubbleCell
+            
+            if indexPath.section == 0 {
+                
+                cell.avatarChannelImage.image = UIImage(named: "people-picture")
+                cell.channelShortNameLabel.isHidden = true
+                cell.separatorSection.isHidden = false
+                cell.isSelectedCircleImage.isHidden = true
+            } else if indexPath.section == 1 {
+                
+                cell.avatarChannelImage.image = UIImage(named: "circle-empty-picture")
+                cell.channelShortNameLabel.isHidden = true
+                cell.separatorSection.isHidden = true
+                cell.isSelectedCircleImage.isHidden = true
+                
+                if let cover = self.channels!.channels?[indexPath.row].cover_url {
+                    
+                    cell.avatarChannelImage.sd_setImage(with: URL(string: cover), placeholderImage: UIImage(named: "circle-empty-picture"))
+                }
+                
+            } else {
+                
+                cell.avatarChannelImage.image = UIImage(named: "add-picture")
+                cell.channelShortNameLabel.isHidden = true
+                cell.separatorSection.isHidden = true
+                cell.isSelectedCircleImage.isHidden = true
+            }
+            
+            // If cell is selected
+            if indexPath.section == self.selectedCell.section && indexPath.row == self.selectedCell.row {
+                
+                cell.isSelectedCircleImage.isHidden = false
+            }
+            
+            return cell
+        } else {
+            
+            let cell: UserCell = tableView.dequeueReusableCell(withIdentifier: "userCell") as! UserCell
+            
+            if let currentChannel = self.currentChannel {
+                
+                if let profile_url = currentChannel.participants?[indexPath.row].profile_url {
+                    
+                    cell.avatarImage.sd_setImage(with: URL(string: profile_url), placeholderImage: UIImage(named: "circle-empty-picture"))
+                }
+                
+                if let nickname = currentChannel.participants?[indexPath.row].nickname {
+                    
+                    cell.nicknameLabel.text = nickname
+                }
+                
+                if let is_online = currentChannel.participants?[indexPath.row].is_online {
+                    
+                    if is_online {
+                        
+                        cell.connectedImage.image = UIImage(named: "circle-connected-picture")
+                    } else {
+                        
+                        cell.connectedImage.image = UIImage(named: "circle-offline-picture")
+                    }
+                }
+                
+            }
+            
+            return cell
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        // Set highlight row
-        if indexPath.section != 2 {
+        // If tableview channel
+        if tableView == self.tableViewChannel {
             
-            self.selectedCell = indexPath
-            self.tableView.reloadData()
-        }
-        
-        if indexPath.section == 0 {
+            // Set highlight row, unless if it's creation channel row
+            if indexPath.section != 2 {
+                
+                self.selectedCell = indexPath
+                self.tableViewChannel.reloadData()
+            }
             
-            // Private channel
-        } else if indexPath.section == 1 {
-            
-            // Groupe channel
+            if indexPath.section == 0 {
+                
+                // Group channel
+            } else if indexPath.section == 1 {
+                
+                // Open channel
+                self.currentChannel = nil
+                self.tableViewUser.reloadData()
+            } else {
+                
+                if let delegate = self.burgerMenuDelegate {
+                    
+                    self.dismiss(animated: true, completion: {
+                        
+                        delegate.changeViewController(segue: "segueCreateChannel")
+                    })
+                }
+            }
         } else {
             
-            // Create channel
+            // rien
         }
     }
     

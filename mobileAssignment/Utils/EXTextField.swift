@@ -54,4 +54,18 @@ extension UITextField {
         self.setNormalBorderColor()
         return result
     }
+    
+    func isValidMessage() -> Bool {
+        self.layer.borderWidth = 1.0
+        self.layer.cornerRadius = 5.0
+        
+        let textRegex = "[A-Za-z0-9]{0,50}"
+        let result = NSPredicate(format: "SELF MATCHES %@", textRegex).evaluate(with: self.text!)
+        if !result {
+            self.setErrorBorderColor()
+            return result
+        }
+        self.setNormalBorderColor()
+        return result
+    }
 }
