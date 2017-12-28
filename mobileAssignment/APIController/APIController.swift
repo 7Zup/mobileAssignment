@@ -154,4 +154,13 @@ class APIController {
         
         self.requestArray(requestType: .get, route: "/open_channels/\(channel_url)/participants", completionHandler: completionHandler)
     }
+    
+    
+    
+    
+    
+    /*****************************************************************************/
+    // MARK: - Message
+    
+    
 }

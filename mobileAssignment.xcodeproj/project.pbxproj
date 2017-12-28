@@ -25,6 +25,8 @@
 		E77FE9A11FF2DDCA00EE85F1 /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77FE9A01FF2DDCA00EE85F1 /* Channel.swift */; };
 		E77FE9B91FF2EC3100EE85F1 /* SendMessageInChannelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77FE9B81FF2EC3100EE85F1 /* SendMessageInChannelTests.swift */; };
 		E77FE9BB1FF2EC4200EE85F1 /* OneToOneChatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77FE9BA1FF2EC4200EE85F1 /* OneToOneChatTests.swift */; };
+		E78B272B1FF4FDC500C20087 /* EXUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78B272A1FF4FDC500C20087 /* EXUIViewController.swift */; };
+		E78B272D1FF4FFB800C20087 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78B272C1FF4FFB800C20087 /* Message.swift */; };
 		E7D0656E1FF2EE9A008734FF /* ChannelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D0656D1FF2EE9A008734FF /* ChannelTests.swift */; };
 		E7FCE95B1FF41937005FD8E1 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FCE95A1FF41937005FD8E1 /* ProfileVC.swift */; };
 		E7FCE95F1FF43795005FD8E1 /* BurgerMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FCE95E1FF43795005FD8E1 /* BurgerMenuVC.swift */; };
@@ -79,6 +81,8 @@
 		E77FE9A41FF2EB3200EE85F1 /* UserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTests.swift; sourceTree = "<group>"; };
 		E77FE9B81FF2EC3100EE85F1 /* SendMessageInChannelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMessageInChannelTests.swift; sourceTree = "<group>"; };
 		E77FE9BA1FF2EC4200EE85F1 /* OneToOneChatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneToOneChatTests.swift; sourceTree = "<group>"; };
+		E78B272A1FF4FDC500C20087 /* EXUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EXUIViewController.swift; sourceTree = "<group>"; };
+		E78B272C1FF4FFB800C20087 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		E7D0656D1FF2EE9A008734FF /* ChannelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelTests.swift; sourceTree = "<group>"; };
 		E7FCE95A1FF41937005FD8E1 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		E7FCE95E1FF43795005FD8E1 /* BurgerMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BurgerMenuVC.swift; sourceTree = "<group>"; };
@@ -159,6 +163,7 @@
 			children = (
 				E74794341FF3C82C00AAFE3B /* EXTextField.swift */,
 				E740E00B1FF3CA18005D6F25 /* Colors.swift */,
+				E78B272A1FF4FDC500C20087 /* EXUIViewController.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -227,6 +232,7 @@
 			children = (
 				E77FE99E1FF2DDC300EE85F1 /* User.swift */,
 				E77FE9A01FF2DDCA00EE85F1 /* Channel.swift */,
+				E78B272C1FF4FFB800C20087 /* Message.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -583,6 +589,8 @@
 				E740E00C1FF3CA18005D6F25 /* Colors.swift in Sources */,
 				E77FE99F1FF2DDC300EE85F1 /* User.swift in Sources */,
 				E74794351FF3C82C00AAFE3B /* EXTextField.swift in Sources */,
+				E78B272D1FF4FFB800C20087 /* Message.swift in Sources */,
+				E78B272B1FF4FDC500C20087 /* EXUIViewController.swift in Sources */,
 				E7FCE95F1FF43795005FD8E1 /* BurgerMenuVC.swift in Sources */,
 				E72426A11FF2F37F002E1F24 /* APIController.swift in Sources */,
 			);
