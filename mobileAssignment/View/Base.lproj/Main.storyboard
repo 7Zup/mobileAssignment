@@ -182,7 +182,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vk0-UC-rfs">
                                 <rect key="frame" x="107" y="0.0" width="268" height="667"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N5l-DL-PH5">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Channel Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N5l-DL-PH5">
                                         <rect key="frame" x="10" y="30" width="228" height="24.5"/>
                                         <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -298,6 +298,7 @@
                         <viewLayoutGuide key="safeArea" id="lNL-dW-lfV"/>
                     </view>
                     <connections>
+                        <outlet property="channelNameLabel" destination="N5l-DL-PH5" id="jpb-fQ-ft4"/>
                         <outlet property="tableViewChannel" destination="UG8-S6-8Cj" id="faa-09-YCZ"/>
                         <outlet property="tableViewUser" destination="Y1D-8s-X2O" id="Dl1-RB-vcd"/>
                     </connections>
@@ -599,6 +600,7 @@
                     <size key="freeformSize" width="375" height="667"/>
                     <connections>
                         <outlet property="navigationBar" destination="0Z1-qS-A6w" id="PEt-w3-bNC"/>
+                        <outlet property="navigationItem" destination="Diy-sg-XNR" id="CLf-62-eOp"/>
                         <outlet property="scrollView" destination="goR-Xu-Vz2" id="2CL-G1-FvO"/>
                         <outlet property="sendMessageTextField" destination="ei2-Rv-dfQ" id="StV-Fk-lGo"/>
                         <outlet property="tableView" destination="nce-Er-UEl" id="JQl-tf-Ai6"/>

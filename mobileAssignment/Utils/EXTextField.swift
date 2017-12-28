@@ -59,7 +59,7 @@ extension UITextField {
         self.layer.borderWidth = 1.0
         self.layer.cornerRadius = 5.0
         
-        let textRegex = "[A-Za-z0-9]{0,50}"
+        let textRegex = "[A-Za-z0-9 áàâäãåçéèêëíìîïñóòôöõúùûüýÿæœÁÀÂÄÃÅÇÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝŸÆŒ._-]{0,50}"
         let result = NSPredicate(format: "SELF MATCHES %@", textRegex).evaluate(with: self.text!)
         if !result {
             self.setErrorBorderColor()

@@ -94,8 +94,8 @@ class LoginVC: UIViewController {
         
         if let user = user {
             
-            self.performSegue(withIdentifier: "segueHome", sender: nil)
             self.user = user
+            self.performSegue(withIdentifier: "segueHome", sender: nil)
         } else {
             
             APIController.shared.createUser(nickname: self.nicknameTextField.text!, completionHandler: createUserCompletionHandler)

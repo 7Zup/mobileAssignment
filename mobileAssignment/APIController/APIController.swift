@@ -123,7 +123,7 @@ class APIController {
     // MARK: - Channel
     
     // Creates a channel
-    func openChannel<T: Mappable>(channelName: String, completionHandler: @escaping (_ user: T?) -> Void) {
+    func openChannel<T: Mappable>(channelName: String, completionHandler: @escaping (_ channel: T?) -> Void) {
         
         var params = [String: AnyObject]()
         params["name"] = channelName as AnyObject
@@ -132,25 +132,25 @@ class APIController {
     }
     
     // Get channel
-    func getChannel<T: Mappable>(channel_url: String, completionHandler: @escaping (_ user: T?) -> Void) {
+    func getChannel<T: Mappable>(channel_url: String, completionHandler: @escaping (_ channel: T?) -> Void) {
         
         self.request(requestType: .get, route: "/open_channels/\(channel_url)", completionHandler: completionHandler)
     }
     
     // Delete channel
-    func deleteChannel<T: Mappable>(channel_url: String, completionHandler: @escaping (_ user: T?) -> Void) {
+    func deleteChannel<T: Mappable>(channel_url: String, completionHandler: @escaping (_ channel: T?) -> Void) {
         
         self.request(requestType: .delete, route: "/open_channels/\(channel_url)", completionHandler: completionHandler)
     }
     
     // List channels
-    func listChannel<T: Mappable>(completionHandler: @escaping (_ user: T?) -> Void) {
+    func listChannel<T: Mappable>(completionHandler: @escaping (_ channels: T?) -> Void) {
         
         self.request(requestType: .get, route: "/open_channels?limit=100", completionHandler: completionHandler)
     }
     
     // List channel participants
-    func listUsersInChannel<T: Mappable>(channel_url: String, completionHandler: @escaping (_ user: [T]?) -> Void) {
+    func listUsersInChannel<T: Mappable>(channel_url: String, completionHandler: @escaping (_ users: [T]?) -> Void) {
         
         self.requestArray(requestType: .get, route: "/open_channels/\(channel_url)/participants", completionHandler: completionHandler)
     }
@@ -162,5 +162,18 @@ class APIController {
     /*****************************************************************************/
     // MARK: - Message
     
+    func listMessages<T: Mappable>(channel_url: String, completionHandler: @escaping (_ messages: T?) -> Void) {
+        
+        self.request(requestType: .get, route: "/open_channels/messages", completionHandler: completionHandler)
+    }
     
+    func sendMessage<T: Mappable>(userId: String, message: String, completionHandler: @escaping (_ messages: T?) -> Void) {
+        
+        var params = [String: AnyObject]()
+        params["message_type"] = "MESG" as AnyObject
+        params["user_id"] = userId as AnyObject
+        params["message"] = message as AnyObject
+        
+        self.request(requestType: .post, route: "/open_channels/messages", params: params, completionHandler: completionHandler)
+    }
 }

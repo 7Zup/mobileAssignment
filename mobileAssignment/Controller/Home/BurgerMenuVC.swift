@@ -36,6 +36,7 @@ class BurgerMenuVC: UIViewController {
     // Outlets
     @IBOutlet weak var tableViewChannel: UITableView!
     @IBOutlet weak var tableViewUser: UITableView!
+    @IBOutlet weak var channelNameLabel: UILabel!
     
     // Variables
     var user: User!
@@ -125,9 +126,11 @@ extension BurgerMenuVC: UITableViewDelegate, UITableViewDataSource {
         // If tableview channel
         if tableView == self.tableViewChannel {
             
+            // 3 section, one for privateMessageList, one for channels, one for creation channel
             return 3
         } else {
             
+            // Only one different cell for displaying users
             return 1
         }
     }
@@ -136,11 +139,14 @@ extension BurgerMenuVC: UITableViewDelegate, UITableViewDataSource {
         
         // If tableview channel
         if tableView == self.tableViewChannel {
+            
             if section == 0 {
                 
+                // Return one cell to access private messages
                 return 1
             } else if section == 1 {
                 
+                // Return number of channels available
                 if self.channels?.channels != nil {
                     
                     return self.channels!.channels!.count
@@ -150,6 +156,7 @@ extension BurgerMenuVC: UITableViewDelegate, UITableViewDataSource {
                 }
             } else {
                 
+                // One cell to create a channel
                 return 1
             }
         } else {
@@ -160,7 +167,7 @@ extension BurgerMenuVC: UITableViewDelegate, UITableViewDataSource {
             if self.selectedCell.section == 1 {
                 
                 // refresh current channel by getting selected channel an fetching info of that channel
-                if let channel = self.channels?.channels?[selectedCell.row], channel.channel_url != nil {
+                if let channel = self.channels?.channels?[selectedCell.row], channel.channel_url != nil, currentChannel == nil {
                     
                     APIController.shared.getChannel(channel_url: channel.channel_url!, completionHandler: getCurrentChannelCompletionHandler)
                 }
@@ -169,10 +176,11 @@ extension BurgerMenuVC: UITableViewDelegate, UITableViewDataSource {
                     
                     return self.currentChannel!.participants!.count
                 } else {
+                    
                     return 0
                 }
             }
-            return 1
+            return 0
         }
     }
     
@@ -266,6 +274,11 @@ extension BurgerMenuVC: UITableViewDelegate, UITableViewDataSource {
                 // Group channel
             } else if indexPath.section == 1 {
                 
+                if let channelName = self.channels?.channels![indexPath.row].name {
+                    
+                    self.channelNameLabel.text = channelName
+                }
+                
                 // Open channel
                 self.currentChannel = nil
                 self.tableViewUser.reloadData()
@@ -275,13 +288,14 @@ extension BurgerMenuVC: UITableViewDelegate, UITableViewDataSource {
                     
                     self.dismiss(animated: true, completion: {
                         
+                        // Instantiate creationView for new channel
                         delegate.changeViewController(segue: "segueCreateChannel")
                     })
                 }
             }
         } else {
             
-            // rien
+            // Instantiate private messages here
         }
     }
     

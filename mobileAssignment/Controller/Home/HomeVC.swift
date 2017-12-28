@@ -28,7 +28,8 @@ class HomeVC: UIViewController {
     // Variables
     var user: User!
     var channels: ChannelList?
-//    var messages: [Message]?
+    var currentChannel: Channel?
+    var messages: MessageList?
     
     // Presenter PopUpBergerMenu
     fileprivate let burgerMenu: Presentr = {
@@ -113,6 +114,14 @@ class HomeVC: UIViewController {
         self.sendMessageTextField.initTextField(placeholder: "Send message here")
     }
     
+    // Initialize messages if a chat has been registered
+    func initMessages() {
+        
+        if let channel_url = self.currentChannel?.channel_url {
+            
+            APIController.shared.listMessages(channel_url: channel_url, completionHandler: getMessageListCompletionHandler)
+        }
+    }
     
     
     
@@ -128,6 +137,29 @@ class HomeVC: UIViewController {
         if let channels = channels {
             
             self.channels = channels
+        }
+    }
+    
+    /// Send message in the current channel
+    ///
+    /// - Parameter messages: Message returned
+    func sendMessageCompletionHandler(message: Message?) {
+        
+        if let message = message {
+            
+            
+        }
+    }
+    
+    /// Get list of messages in the current channel
+    ///
+    /// - Parameter messages: MessageList returned
+    func getMessageListCompletionHandler(messages: MessageList?) {
+        
+        if let messages = messages {
+            
+            self.messages = messages
+            self.tableView.reloadData()
         }
     }
     
@@ -156,7 +188,11 @@ class HomeVC: UIViewController {
     @IBAction func sendMessageButtonTUI(_ sender: Any) {
         
         if self.sendMessageTextField.isValidMessage() {
-            print("Send message")
+        
+            if let userId = self.user.user_id {
+                
+                APIController.shared.sendMessage(userId: userId, message: sendMessageTextField.text!, completionHandler: sendMessageCompletionHandler)
+            }
         }
     }
     
@@ -195,15 +231,27 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return 3
+
+        return self.messages?.messages?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell: MessageCell = tableView.dequeueReusableCell(withIdentifier: "messageCell") as! MessageCell
         
-        // Fill cell with messages[indexPath.row].blabla
+        if let message = self.messages?.messages![indexPath.row] {
+            
+            if let avatar_url = message.user?.profile_url {
+
+                cell.avatarImage.sd_setImage(with: URL(string: avatar_url), placeholderImage: UIImage(named: "circle-empty-picture"))
+            }
+            
+            if let nickname = message.user?.nickname {
+                
+                cell.nicknameLabel.text = nickname
+            }
+            cell.messageLabel.text = message.message
+        }
         
         return cell
     }
@@ -227,7 +275,9 @@ extension HomeVC: BurgerMenuDelegate {
     }
     
     func openChat(channel: Channel) {
-        
-        // CALL API TO GET ALL MESSAGES, REMPLIR CETTE VARIABLE ET AFFICHER CORRECTEMENT TOUT CA, PUIS FAIRE EN SORTE DE POUVOIR ENVOYER DES MESSAGES
+     
+        self.currentChannel = channel
+        self.navigationItem.title = channel.name
+        self.initMessages()
     }
 }
