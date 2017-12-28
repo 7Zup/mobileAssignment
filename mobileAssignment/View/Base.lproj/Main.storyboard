@@ -49,7 +49,7 @@
                                     <constraint firstItem="tvP-zM-ZS6" firstAttribute="centerY" secondItem="RJD-yf-QKU" secondAttribute="centerY" id="xhg-mZ-TJc"/>
                                 </constraints>
                             </stackView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Fabylou" borderStyle="roundedRect" placeholder="Pseudo" textAlignment="justified" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YJ8-C6-jrc">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Pseudo" textAlignment="justified" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YJ8-C6-jrc">
                                 <rect key="frame" x="20" y="302.5" width="335" height="40"/>
                                 <color key="backgroundColor" red="0.17214614149999999" green="0.1840682924" blue="0.200710535" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -182,8 +182,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vk0-UC-rfs">
                                 <rect key="frame" x="107" y="0.0" width="268" height="667"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Channel Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N5l-DL-PH5">
-                                        <rect key="frame" x="10" y="30" width="228" height="24.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Private Messages" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N5l-DL-PH5">
+                                        <rect key="frame" x="10" y="30" width="228" height="25"/>
                                         <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -400,7 +400,7 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TestChannel" borderStyle="roundedRect" placeholder="Channel name" textAlignment="justified" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FMm-x2-AIe">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Channel name" textAlignment="justified" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FMm-x2-AIe">
                                 <rect key="frame" x="20" y="302.5" width="335" height="40"/>
                                 <color key="backgroundColor" red="0.17214614149999999" green="0.1840682924" blue="0.200710535" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>

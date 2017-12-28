@@ -272,6 +272,7 @@ extension BurgerMenuVC: UITableViewDelegate, UITableViewDataSource {
             if indexPath.section == 0 {
                 
                 // Group channel
+                self.channelNameLabel.text = "Private Messages"
             } else if indexPath.section == 1 {
                 
                 if let channelName = self.channels?.channels![indexPath.row].name {
